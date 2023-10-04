@@ -1,6 +1,4 @@
-package hw;
-
-import hw.Calculator;
+package hw1;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;

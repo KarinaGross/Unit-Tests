@@ -1,4 +1,4 @@
-package hw;
+package hw1;
 
 public class Product {
     private int cost; // Стоимость продукта
