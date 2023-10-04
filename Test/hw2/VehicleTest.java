@@ -68,17 +68,4 @@ class VehicleTest {
         assertThat(motorcycle.getSpeed()).isEqualTo(0);
     }
 
-
-    // boolean Сломанный-Тест() {
-    // // Assert (Проверка утверждения)
-    //
-//    assertThat(cart.getTotalPrice()).isEqualTo(cart.getTotalPrice());
-    // // Act (Выполнение)
-    // cart.addProductToCartByID(2); // 250
-    // cart.addProductToCartByID(2); // 250
-    // // Arrange (Подготовка)
-    // Shop shop = new Shop(getStoreItems());
-    // Cart cart = new Cart(shop);
-    // }
-
 }
