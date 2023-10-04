@@ -2,12 +2,16 @@ package seminar2;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-//import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -105,6 +109,37 @@ class CartTest {
         assertThat(shop.getProductsShop().get(0).getQuantity()).isEqualTo(9);
     }
 
+    @ParameterizedTest
+    @ValueSource(ints = {-100, 100})
+    void incorrectProductSelectionCousesExeption(int i) {
+        assertThatThrownBy(() -> cart.addProductToCartByID(i))
+                .isInstanceOf(RuntimeException.class).describedAs("Не найден продукт с id: " + i);
+    }
+
+    @Test
+    void incorrectProductRemoveCousesExeption() {
+        assertThatThrownBy(() -> cart.removeProductByID(1))
+                .isInstanceOf(RuntimeException.class).describedAs("Не найден продукт с id: " + 1);
+    }
+
+    @Test
+    @DisplayName("Advanced test for calculating TotalPrice")
+    @RepeatedTest(10)
+    @Timeout(value = 70, unit = TimeUnit.MICROSECONDS)
+    void testAnnotation() throws InterruptedException{
+        Thread.sleep(100);
+        assertThat(true);
+    }
+
+    // Домашняя работа
+    @Test
+    void checkTotalPriceAfterAddingProducts() {
+
+        cart.addProductToCartByID(2);
+        cart.addProductToCartByID(2);
+
+        assertThat(cart.getTotalPrice()).isEqualTo(500);
+    }
 
 
 }
