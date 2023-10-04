@@ -1,4 +1,4 @@
-package hw2.hw;
+package hw2;
 
 public class Motorcycle extends Vehicle {
     private String company;

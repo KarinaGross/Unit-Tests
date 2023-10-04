@@ -1,4 +1,4 @@
-package hw2.hw;
+package hw2;
 
 public abstract class Vehicle {
     private String company;
