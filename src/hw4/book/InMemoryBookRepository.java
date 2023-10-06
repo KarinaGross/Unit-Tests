@@ -1,4 +1,4 @@
-package seminars.fourth.book;
+package hw4.book;
 
 import java.util.ArrayList;
 import java.util.HashMap;
